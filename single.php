@@ -1,3 +1,7 @@
+<?php 
+require("./function.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,9 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini blog - Post</title>
-    <script src="cdn.tailwindcss.com_3.3.2"></script>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/single.css" />
+    <script src="<?= asset("js/cdn.tailwindcss.com_3.3.2") ?>"></script>
+    <link rel="stylesheet" href="<?= asset("css/style.css") ?>" />
+    <link rel="stylesheet" href="<?= asset("css/single.css") ?>" />
   </head>
   <body>
     <!-- Menu -->
@@ -26,28 +30,28 @@
 
       <ul class="hidden lg:inline-flex">
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="index.html">Home</a>
+          <a class="hover:text-sky-400 transition" href="index.php">Home</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html"
+          <a class="hover:text-sky-400 transition" href="category.php"
             >Politics</a
           >
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html">Tech</a>
+          <a class="hover:text-sky-400 transition" href="category.php">Tech</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html"
+          <a class="hover:text-sky-400 transition" href="category.php"
             >Entertainment</a
           >
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html"
+          <a class="hover:text-sky-400 transition" href="category.php"
             >Travel</a
           >
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html"
+          <a class="hover:text-sky-400 transition" href="category.php"
             >Sports</a
           >
         </li>
@@ -86,42 +90,42 @@
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="index.html"
+              href="index.php"
               >Home</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Politics</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Tech</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Entertainment</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Travel</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Sports</a
             >
           </li>
@@ -499,27 +503,27 @@
           <br />
           <hr />
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
-            <span><a href="category.html" class="text-blue-500">Food</a></span>
+            <span><a href="category.php" class="text-blue-500">Food</a></span>
             <span>(12)</span>
           </div>
           <hr />
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
             <span
-              ><a href="category.html" class="text-blue-500">Travel</a></span
+              ><a href="category.php" class="text-blue-500">Travel</a></span
             >
             <span>(22)</span>
           </div>
           <hr />
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
-            <span><a href="category.html" class="text-blue-500">Sport</a></span>
+            <span><a href="category.php" class="text-blue-500">Sport</a></span>
             <span>(49)</span>
           </div>
           <hr />
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
             <span
-              ><a href="category.html" class="text-blue-500">Lifestyle</a></span
+              ><a href="category.php" class="text-blue-500">Lifestyle</a></span
             >
             <span>(36)</span>
           </div>
@@ -527,7 +531,7 @@
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
             <span
-              ><a href="category.html" class="text-blue-500">Business</a></span
+              ><a href="category.php" class="text-blue-500">Business</a></span
             >
             <span>(89)</span>
           </div>
@@ -561,7 +565,7 @@
         <div
           class="w-100 xl:mt-0 overflow-hidden rounded-md xl:grid-rows-2 xl:col-start-2 xl:col-end-3 xl:h-100"
         >
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-96 xl:h-full bg-[url('assets/images/4.webp')] bg-cover bg-center relative"
             >
@@ -583,7 +587,7 @@
           <div
             class="w-100 h-56 xl:h-full mt-6 xl:mt-0 overflow-hidden rounded-md"
           >
-            <a href="single.html">
+            <a href="single.php">
               <div
                 class="w-100 h-full bg-[url('assets/images/3.webp')] bg-cover bg-center relative"
               >
@@ -599,7 +603,7 @@
             </a>
           </div>
           <div class="xl:grid xl:grid-cols-2 xl:gap-5">
-            <a href="single.html">
+            <a href="single.php">
               <div
                 class="w-100 h-56 xl:h-full mt-6 xl:mt-0 overflow-hidden rounded-md"
               >
@@ -617,7 +621,7 @@
                 </div>
               </div>
             </a>
-            <a href="single.html">
+            <a href="single.php">
               <div
                 class="w-100 h-56 xl:h-full mt-6 xl:mt-0 overflow-hidden rounded-md"
               >
@@ -681,16 +685,16 @@
           </div>
           <div class="mt-8 text-gray-500 flex gap-10">
             <ul>
-              <li class="mt-1"><a href="index.html">About Us</a></li>
-              <li class="mt-1"><a href="index.html">Advertise</a></li>
-              <li class="mt-1"><a href="index.html">Careers</a></li>
-              <li class="mt-1"><a href="index.html">Subscribes</a></li>
+              <li class="mt-1"><a href="index.php">About Us</a></li>
+              <li class="mt-1"><a href="index.php">Advertise</a></li>
+              <li class="mt-1"><a href="index.php">Careers</a></li>
+              <li class="mt-1"><a href="index.php">Subscribes</a></li>
             </ul>
             <ul>
-              <li class="mt-1"><a href="category.html">Travel</a></li>
-              <li class="mt-1"><a href="category.html">Lifestyle</a></li>
-              <li class="mt-1"><a href="category.html">Sports</a></li>
-              <li class="mt-1"><a href="category.html">Nature</a></li>
+              <li class="mt-1"><a href="category.php">Travel</a></li>
+              <li class="mt-1"><a href="category.php">Lifestyle</a></li>
+              <li class="mt-1"><a href="category.php">Sports</a></li>
+              <li class="mt-1"><a href="category.php">Nature</a></li>
             </ul>
           </div>
           <div class="mt-8 text-gray-300">

@@ -1,17 +1,20 @@
+<?php 
+require("./function.php")
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini blog - Home</title>
-    <script src="cdn.tailwindcss.com_3.3.2"></script>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
+    <title>Mini blog - Category</title>
+    <script src="<?= asset("js/cdn.tailwindcss.com_3.3.2") ?>"></script>
+    <link rel="stylesheet" href="<?= asset("css/style.css") ?>" />
   </head>
-  <body class="">
+  <body>
     <!-- Menu -->
-    <nav
+        <nav
       class="w-full fixed z-30 bg-white mx-auto shadow-md w-full flex justify-between items-center px-4 py-1.5 lg:py-3 z-10"
     >
       <h2 class="text-2xl">Mini Blog</h2>
@@ -26,28 +29,28 @@
 
       <ul class="hidden lg:inline-flex">
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="index.html">Home</a>
+          <a class="hover:text-sky-400 transition" href="index.php">Home</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html"
+          <a class="hover:text-sky-400 transition" href="category.php"
             >Politics</a
           >
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html">Tech</a>
+          <a class="hover:text-sky-400 transition" href="category.php">Tech</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html"
+          <a class="hover:text-sky-400 transition" href="category.php"
             >Entertainment</a
           >
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html"
+          <a class="hover:text-sky-400 transition" href="category.php"
             >Travel</a
           >
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.html"
+          <a class="hover:text-sky-400 transition" href="category.php"
             >Sports</a
           >
         </li>
@@ -86,42 +89,42 @@
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="index.html"
+              href="index.php"
               >Home</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Politics</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Tech</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Entertainment</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Travel</a
             >
           </li>
           <li class="mt-2 text-lg">
             <a
               class="hover:text-sky-400 transition menu-items"
-              href="category.html"
+              href="category.php"
               >Sports</a
             >
           </li>
@@ -136,77 +139,22 @@
       </div>
     </div>
 
-    <!-- Intro -->
-    <div
-      class="bg-gray-50 container mx-auto pt-12 md:pt-0 md:h-screen md:flex md:flex-col md:justify-center lg:px-28 2xl:px-40"
-    >
-      <div
-        class="md:grid md:grid-cols-2 md:grid-rows-2 md:gap-5 lg:grid-cols-3"
-      >
-        <a
-          href="single.html"
-          class="w-full h-36 lg:h-60 overflow-hidden flex items-center mt-2 relative rounded sm:h-44 sm:mt-12 md:mt-0 md:h-68 bg-[url('assets/images/1.webp')] bg-cover bg-center"
-        >
-          <div
-            class="absolute text-white bottom-0 w-full bg-gray-900 opacity-75 p-2"
-          >
-            <h2 class="text-md">traning course HTML and CSS for all</h2>
-            <span class="text-xs text-gray-400">2023 May 13</span>
-          </div>
-        </a>
-        <a
-          href="single.html"
-          class="w-full h-36 lg:h-60 overflow-hidden items-center mt-4 relative rounded sm:h-44 sm:mt-12 md:mt-0 md:h-68 lg:h-full lg:row-span-2 lg:justify-center hidden lg:flex bg-[url('assets/images/5.jpg')] bg-cover bg-center"
-        >
-          <div
-            class="absolute text-white bottom-0 w-full bg-gray-900 opacity-75 p-2"
-          >
-            <h2 class="text-md">traning course HTML and CSS for all</h2>
-            <span class="text-xs text-gray-400">2023 May 13</span>
-          </div>
-        </a>
-        <a
-          href="single.html"
-          class="w-full h-36 lg:h-60 overflow-hidden flex items-center mt-4 relative rounded sm:h-44 sm:mt-12 md:mt-0 md:h-68 bg-[url('assets/images/2.webp')] bg-cover bg-center"
-        >
-          <div
-            class="absolute text-white bottom-0 w-full bg-gray-900 opacity-75 p-2"
-          >
-            <h2 class="text-md">traning course HTML and CSS for all</h2>
-            <span class="text-xs text-gray-400">2023 May 13</span>
-          </div>
-        </a>
-        <a
-          href="single.html"
-          class="w-full h-36 lg:h-60 overflow-hidden flex items-center mt-4 relative rounded sm:h-44 sm:mt-12 md:mt-0 md:h-68 bg-[url('assets/images/3.webp')] bg-cover bg-center"
-        >
-          <div
-            class="absolute text-white bottom-0 w-full bg-gray-900 opacity-75 p-2"
-          >
-            <h2 class="text-md">traning course HTML and CSS for all</h2>
-            <span class="text-xs text-gray-400">2023 May 13</span>
-          </div>
-        </a>
-        <a
-          href="single.html"
-          class="w-full h-36 lg:h-60 overflow-hidden items-center mt-4 relative rounded sm:h-44 sm:mt-12 md:mt-0 md:h-68 flex bg-[url('assets/images/4.webp')] bg-cover bg-center"
-        >
-          <div
-            class="absolute text-white bottom-0 w-full bg-gray-900 opacity-75 p-2"
-          >
-            <h2 class="text-md">traning course HTML and CSS for all</h2>
-            <span class="text-xs text-gray-400">2023 May 13</span>
-          </div>
-        </a>
-      </div>
+    <!-- Categoty title -->
+    <div class="bg-gray-100 py-20 px-6 sm:px-20 lg:px-32">
+      <p class="text-md text-gray-500">Category</p>
+      <h2 class="text-4xl mt-2">Sports</h2>
+      <p class="text-gray-500 mt-4 sm:w-1/2">
+        Category description here.. Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Aliquam error eius quo, officiis non maxime quos
+        reiciendis perferendis doloremque maiores!
+      </p>
     </div>
 
-    <!-- Recent -->
-    <div class="container lg:px-28 mt-28 mx-auto pb-20">
-      <h2 class="text-5xl ml-3 -mb-10">Recent</h2>
+    <!-- Category posts -->
+    <div class="container lg:px-28 mx-auto pb-20">
       <div class="w-100 xl:grid xl:grid-cols-3 xl:grid-rows-3 xl:gap-5">
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -233,9 +181,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -243,7 +189,7 @@
           </a>
         </div>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -270,9 +216,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -280,7 +224,7 @@
           </a>
         </div>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -307,9 +251,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -318,7 +260,7 @@
         </div>
 
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -345,9 +287,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -355,7 +295,7 @@
           </a>
         </div>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -382,9 +322,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -392,7 +330,7 @@
           </a>
         </div>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -419,9 +357,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -429,7 +365,7 @@
           </a>
         </div>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -456,9 +392,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -466,7 +400,7 @@
           </a>
         </div>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -493,9 +427,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -503,7 +435,7 @@
           </a>
         </div>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.html">
+          <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
@@ -530,9 +462,7 @@
                 impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
                 quia porro id est.
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.html"
+                <a class="block mt-6 font-light text-xl text-blue-500" href="#"
                   >Read More</a
                 >
               </p>
@@ -575,118 +505,6 @@
       </div>
     </div>
 
-    <!-- Favorite -->
-    <div class="container py-6 bg-gray-50 mx-auto xl:h-screen xl:px-28">
-      <h2 class="text-5xl ml-3 mb-6">Favorite</h2>
-      <div class="xl:grid xl:grid-cols-2 xl:grid-rows-1 xl:gap-3 h-5/6">
-        <div
-          class="w-100 xl:mt-0 overflow-hidden rounded-md xl:grid-rows-2 xl:col-start-2 xl:col-end-3 xl:h-100"
-        >
-          <a href="single.html">
-            <div
-              class="w-100 h-96 xl:h-full bg-[url('assets/images/4.webp')] bg-cover bg-center relative"
-            >
-              <div
-                class="absolute bg-shadow-custom flex flex-col justify-end px-4 py-4"
-              >
-                <h2 class="text-white text-3xl mb-4 tracking-wide">
-                  The 20 Biggest Fintech Companies In America 2019
-                </h2>
-                <span class="text-gray-400">February 12, 2019</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div
-          class="xl:col-start-1 xl:col-end-2 xl:row-start-1 xl:row-end-2 xl:h-100 xl:grid xl:grid-rows-2 xl:gap-5"
-        >
-          <div
-            class="w-100 h-56 xl:h-full mt-6 xl:mt-0 overflow-hidden rounded-md"
-          >
-            <a href="single.html">
-              <div
-                class="w-100 h-full bg-[url('assets/images/3.webp')] bg-cover bg-center relative"
-              >
-                <div
-                  class="absolute bg-shadow-custom flex flex-col justify-end px-4 py-4"
-                >
-                  <h2 class="text-white text-xl mb-2 tracking-wide">
-                    The 20 Biggest Fintech Companies In America 2019
-                  </h2>
-                  <span class="text-gray-400 text-xs">February 12, 2019</span>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="xl:grid xl:grid-cols-2 xl:gap-5">
-            <a href="single.html">
-              <div
-                class="w-100 h-56 xl:h-full mt-6 xl:mt-0 overflow-hidden rounded-md"
-              >
-                <div
-                  class="w-100 h-full bg-[url('assets/images/1.webp')] bg-cover bg-center relative"
-                >
-                  <div
-                    class="absolute bg-shadow-custom flex flex-col justify-end px-4 py-4"
-                  >
-                    <h2 class="text-white text-xl mb-2 tracking-wide">
-                      The 20 Biggest Fintech Companies In America 2019
-                    </h2>
-                    <span class="text-gray-400 text-xs">February 12, 2019</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-            <a href="single.html">
-              <div
-                class="w-100 h-56 xl:h-full mt-6 xl:mt-0 overflow-hidden rounded-md"
-              >
-                <div
-                  class="w-100 h-full bg-[url('assets/images/2.webp')] bg-cover bg-center relative"
-                >
-                  <div
-                    class="absolute bg-shadow-custom flex flex-col justify-end px-4 py-4"
-                  >
-                    <h2 class="text-white text-xl mb-2 tracking-wide">
-                      The 20 Biggest Fintech Companies In America 2019
-                    </h2>
-                    <span class="text-gray-400 text-xs">February 12, 2019</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Subscribe  -->
-    <div class="w-full flex justify-center py-24">
-      <div class="flex justify-center items-center flex-col px-2">
-        <h2 class="text-center text-2xl">Subscribe to our newsletter</h2>
-        <p class="text-center text-gray-400 text-lg mt-4 sm:w-80">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nesciunt
-          error illum a explicabo, ipsam nostrum.
-        </p>
-        <form
-          action="#"
-          class="flex flex-col justify-center sm:flex-row mt-8 w-4/5 sm:w-96"
-        >
-          <input
-            type="text"
-            class="form-input text-center border-2 border-blue-500 px-2 py-1 focus:outline-none"
-            placeholder="Enter your email address"
-          />
-          <input
-            type="submit"
-            class="form-input relative -mt-1 sm:mt-0 sm:-ml-1 bg-blue-500 text-white border-2 border-blue-500 hover:bg-white hover:text-blue-500 cursor-pointer transition px-4 py-1.5"
-            value="Subscribe"
-          />
-        </form>
-      </div>
-    </div>
-
     <!-- Footer -->
     <footer class="bg-zinc-800 w-full text-white pb-4">
       <div class="container mx-auto flex flex-col px-6">
@@ -702,16 +520,16 @@
           </div>
           <div class="mt-8 text-gray-500 flex gap-10">
             <ul>
-              <li class="mt-1"><a href="index.html">About Us</a></li>
-              <li class="mt-1"><a href="index.html">Advertise</a></li>
-              <li class="mt-1"><a href="index.html">Careers</a></li>
-              <li class="mt-1"><a href="index.html">Subscribes</a></li>
+              <li class="mt-1"><a href="index.php">About Us</a></li>
+              <li class="mt-1"><a href="index.php">Advertise</a></li>
+              <li class="mt-1"><a href="index.php">Careers</a></li>
+              <li class="mt-1"><a href="index.php">Subscribes</a></li>
             </ul>
             <ul>
-              <li class="mt-1"><a href="category.html">Travel</a></li>
-              <li class="mt-1"><a href="category.html">Lifestyle</a></li>
-              <li class="mt-1"><a href="category.html">Sports</a></li>
-              <li class="mt-1"><a href="category.html">Nature</a></li>
+              <li class="mt-1"><a href="category.php">Travel</a></li>
+              <li class="mt-1"><a href="category.php">Lifestyle</a></li>
+              <li class="mt-1"><a href="category.php">Sports</a></li>
+              <li class="mt-1"><a href="category.php">Nature</a></li>
             </ul>
           </div>
           <div class="mt-8 text-gray-300">
