@@ -1,7 +1,7 @@
 <?php 
 require("./function.php");
 
-// dd(get_data("setting"));
+$setting = get_data("setting");
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ require("./function.php");
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini blog - Home</title>
+    <title><?= $setting["title"] ?> - Home</title>
     <script src="<?= asset("js/cdn.tailwindcss.com_3.3.2") ?>"></script>
     <link rel="stylesheet" href="<?= asset("css/style.css") ?>" />
     <link rel="stylesheet" href="<?= asset("css/home.css") ?>" />
@@ -20,7 +20,7 @@ require("./function.php");
     <nav
       class="w-full fixed z-30 bg-white mx-auto shadow-md w-full flex justify-between items-center px-4 py-1.5 lg:py-3 z-10"
     >
-      <h2 class="text-2xl">Mini Blog</h2>
+      <h2 class="text-2xl"><?= $setting["title"] ?></h2>
       <div
         id="toggleOpen"
         class="cursor-pointer flex flex-col w-6 h-3.5 justify-between box-content border-2 border-transparent hover:border-sky-400 transition p-1 rounded lg:hidden"
@@ -734,8 +734,7 @@ require("./function.php");
         </div>
         <div class="mt-20">
           <h2 class="text-sm text-center">
-            Copyright © 2023 All rights reserved | This template is made with
-            <ion-icon name="heart-outline"></ion-icon> by Moein0Mirsaeedi
+          <?= $setting["footer"] ?>
           </h2>
         </div>
       </div>
