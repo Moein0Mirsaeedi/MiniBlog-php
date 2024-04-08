@@ -1,5 +1,7 @@
 <?php 
-require("./function.php")
+require("./function.php");
+
+// dd(get_data("setting"));
 ?>
 
 <!DOCTYPE html>
