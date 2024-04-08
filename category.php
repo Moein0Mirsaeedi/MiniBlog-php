@@ -158,7 +158,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/6.jpg" alt="1" />
+              <img class="w-100" src="<?= asset("images/6.jpg") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -167,7 +167,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
@@ -193,7 +193,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/1.webp" alt="1" />
+              <img class="w-100" src="<?= asset("images/1.webp") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -202,7 +202,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
@@ -228,7 +228,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/2.webp" alt="1" />
+              <img class="w-100" src="<?= asset("images/2.webp") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -237,7 +237,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
@@ -264,7 +264,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/1.webp" alt="1" />
+              <img class="w-100" src="<?= asset("images/1.webp") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -273,7 +273,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
@@ -299,7 +299,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/4.webp" alt="1" />
+              <img class="w-100" src="<?= asset("images/4.webp") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -308,7 +308,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
@@ -334,7 +334,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/6.jpg" alt="1" />
+              <img class="w-100" src="<?= asset("images/6.jpg") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -343,7 +343,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
@@ -369,7 +369,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/1.webp" alt="1" />
+              <img class="w-100" src="<?= asset("images/1.webp") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -378,7 +378,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
@@ -404,7 +404,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/4.webp" alt="1" />
+              <img class="w-100" src="<?= asset("images/4.webp") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -413,7 +413,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
@@ -439,7 +439,7 @@ require("./function.php")
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="assets/images/6.jpg" alt="1" />
+              <img class="w-100" src="<?= asset("images/6.jpg") ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
@@ -448,7 +448,7 @@ require("./function.php")
               <div class="flex mt-6 items-center">
                 <img
                   class="w-8 h-8 rounded-full"
-                  src="assets/images/5.jpg"
+                  src="<?= asset("images/5.jpg") ?>"
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"

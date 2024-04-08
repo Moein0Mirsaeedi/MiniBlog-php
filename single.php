@@ -142,7 +142,7 @@ require("./function.php")
 
     <!-- intro -->
     <div
-      class="mt-5 lg:mt-8 w-full h-screen bg-[url('assets/images/1.webp')] bg-cover bg-center bg-brightness relative"
+      class="mt-5 lg:mt-8 w-full h-screen bg-[url('<?= asset("images/1.webp") ?>')] bg-cover bg-center bg-brightness relative"
     >
       <div
         class="container mx-auto h-full flex justify-center items-center flex-col relative z-10"
@@ -153,7 +153,7 @@ require("./function.php")
           The AI magically removes moving objects from videos.
         </h1>
         <div class="flex mt-6 items-center">
-          <img class="w-8 h-8 rounded-full" src="assets/images/5.jpg" alt="" />
+          <img class="w-8 h-8 rounded-full" src="<?= asset("images/5.jpg") ?>" alt="" />
           <span class="ml-4 font-light text-white text-sm"
             >By <span class="font-normal text-md">Carrol Atkinson</span> - July
             19, 2019</span
@@ -201,11 +201,11 @@ require("./function.php")
           doloremque, sed necessitatibus ad quae sint:
           <br />
 
-          <img src="assets/images/1.webp" class="w-full rounded-md" alt="" />
+          <img src="<?= asset("images/1.webp") ?>" class="w-full rounded-md" alt="" />
           <br />
-          <img src="assets/images/2.webp" class="w-full rounded-md" alt="" />
+          <img src="<?= asset("images/2.webp") ?>" class="w-full rounded-md" alt="" />
           <br />
-          <img src="assets/images/3.webp" class="w-full rounded-md" alt="" />
+          <img src="<?= asset("images/3.webp") ?>" class="w-full rounded-md" alt="" />
 
           <br />
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero nulla
@@ -240,7 +240,7 @@ require("./function.php")
               <div>
                 <div class="flex gap-5">
                   <img
-                    src="assets/images/6.jpg"
+                    src="<?= asset("images/6.jpg") ?>"
                     class="w-12 h-12 rounded-full"
                     alt="6"
                   />
@@ -268,7 +268,7 @@ require("./function.php")
               <div>
                 <div class="flex gap-5">
                   <img
-                    src="assets/images/6.jpg"
+                    src="<?= asset("images/6.jpg") ?>"
                     class="w-12 h-12 rounded-full"
                     alt="6"
                   />
@@ -296,7 +296,7 @@ require("./function.php")
                   <div>
                     <div class="flex gap-5">
                       <img
-                        src="assets/images/6.jpg"
+                        src="<?= asset("images/6.jpg") ?>"
                         class="w-12 h-12 rounded-full"
                         alt="6"
                       />
@@ -324,7 +324,7 @@ require("./function.php")
                       <div>
                         <div class="flex gap-5">
                           <img
-                            src="assets/images/6.jpg"
+                            src="<?= asset("images/6.jpg") ?>"
                             class="w-12 h-12 rounded-full"
                             alt="6"
                           />
@@ -359,7 +359,7 @@ require("./function.php")
               <div>
                 <div class="flex gap-5">
                   <img
-                    src="assets/images/6.jpg"
+                    src="<?= asset("images/6.jpg") ?>"
                     class="w-12 h-12 rounded-full"
                     alt="6"
                   />
@@ -419,7 +419,7 @@ require("./function.php")
       <section class="w-full lg:w-2/6 bg-gray-50 mt-6 lg:mt-0 pt-8 px-4 pb-12">
         <div class="w-full flex flex-col items-center justify-center px-12">
           <img
-            src="assets/images/5.jpg"
+            src="<?= asset("images/5.jpg") ?>"
             class="rounded-full w-40 h-40"
             alt=""
           />
@@ -443,7 +443,7 @@ require("./function.php")
           <div
             class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
           >
-            <img src="assets/images/6.jpg" class="w-40 h-full" alt="6" />
+            <img src="<?= asset("images/6.jpg") ?>" class="w-40 h-full" alt="6" />
             <span>
               <span class="text-sm lg:text-sm xl:text-lg">
                 There’s a Cool New Way for Men to Wear Socks and Sandals</span
@@ -457,7 +457,7 @@ require("./function.php")
           <div
             class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
           >
-            <img src="assets/images/1.webp" class="w-40 h-full" alt="6" />
+            <img src="<?= asset("images/1.webp") ?>" class="w-40 h-full" alt="6" />
             <span>
               <span class="text-sm lg:text-sm xl:text-lg">
                 There’s a Cool New Way for Men to Wear Socks and Sandals</span
@@ -471,7 +471,7 @@ require("./function.php")
           <div
             class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
           >
-            <img src="assets/images/2.webp" class="w-40 h-full" alt="6" />
+            <img src="<?= asset("images/2.webp") ?>" class="w-40 h-full" alt="6" />
             <span>
               <span class="text-sm lg:text-sm xl:text-lg">
                 There’s a Cool New Way for Men to Wear Socks and Sandals</span
@@ -485,7 +485,7 @@ require("./function.php")
           <div
             class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
           >
-            <img src="assets/images/6.jpg" class="w-40 h-full" alt="6" />
+            <img src="<?= asset("images/6.jpg") ?>" class="w-40 h-full" alt="6" />
             <span>
               <span class="text-sm lg:text-sm xl:text-lg">
                 There’s a Cool New Way for Men to Wear Socks and Sandals</span
@@ -567,7 +567,7 @@ require("./function.php")
         >
           <a href="single.php">
             <div
-              class="w-100 h-96 xl:h-full bg-[url('assets/images/4.webp')] bg-cover bg-center relative"
+              class="w-100 h-96 xl:h-full bg-[url('<?= asset("images/4.webp") ?>')] bg-cover bg-center relative"
             >
               <div
                 class="absolute bg-shadow-custom flex flex-col justify-end px-4 py-4"
@@ -589,7 +589,7 @@ require("./function.php")
           >
             <a href="single.php">
               <div
-                class="w-100 h-full bg-[url('assets/images/3.webp')] bg-cover bg-center relative"
+                class="w-100 h-full bg-[url('<?= asset("images/3.webp") ?>')] bg-cover bg-center relative"
               >
                 <div
                   class="absolute bg-shadow-custom flex flex-col justify-end px-4 py-4"
@@ -608,7 +608,7 @@ require("./function.php")
                 class="w-100 h-56 xl:h-full mt-6 xl:mt-0 overflow-hidden rounded-md"
               >
                 <div
-                  class="w-100 h-full bg-[url('assets/images/1.webp')] bg-cover bg-center relative"
+                  class="w-100 h-full bg-[url('<?= asset("images/1.webp") ?>')] bg-cover bg-center relative"
                 >
                   <div
                     class="absolute bg-shadow-custom flex flex-col justify-end px-4 py-4"
@@ -626,7 +626,7 @@ require("./function.php")
                 class="w-100 h-56 xl:h-full mt-6 xl:mt-0 overflow-hidden rounded-md"
               >
                 <div
-                  class="w-100 h-full bg-[url('assets/images/2.webp')] bg-cover bg-center relative"
+                  class="w-100 h-full bg-[url('<?= asset("images/2.webp") ?>')] bg-cover bg-center relative"
                 >
                   <div
                     class="absolute bg-shadow-custom flex flex-col justify-end px-4 py-4"
