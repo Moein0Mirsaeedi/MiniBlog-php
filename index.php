@@ -2,6 +2,7 @@
 require("./function.php");
 
 $setting = get_data("setting");
+$posts = get_data("post");
 ?>
 
 <!DOCTYPE html>
@@ -86,16 +87,18 @@ $setting = get_data("setting");
     <div class="container lg:px-28 mt-28 mx-auto pb-20">
       <h2 class="text-5xl ml-3 -mb-10">Recent</h2>
       <div class="w-100 xl:grid xl:grid-cols-3 xl:grid-rows-3 xl:gap-5">
+
+      <?php foreach($posts as $post): ?>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
           <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="<?= asset("images/6.jpg") ?>" alt="1" />
+              <img class="w-100" src="<?= asset("images/" . $post["image"]) ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
+                <?= $post["title"] ?>
               </h3>
               <div class="flex mt-6 items-center">
                 <img
@@ -104,15 +107,12 @@ $setting = get_data("setting");
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
+                  >By <span class="font-normal text-md"><?= $post["author"] ?></span> -
+                  <?= $post["date_published"] ?></span
                 >
               </div>
               <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
+              <?= substr($post["content"], 0, 250) . "..." ?>
 
                 <a
                   class="block mt-6 font-light text-xl text-blue-500"
@@ -123,303 +123,8 @@ $setting = get_data("setting");
             </div>
           </a>
         </div>
-        <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
-            <div
-              class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
-            >
-              <img class="w-100" src="<?= asset("images/1.webp") ?>" alt="1" />
-            </div>
-            <div class="w-100 px-8 lg:px-0 mt-8">
-              <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
-              </h3>
-              <div class="flex mt-6 items-center">
-                <img
-                  class="w-8 h-8 rounded-full"
-                  src="<?= asset("images/5.jpg") ?>"
-                  alt=""
-                />
-                <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
-                >
-              </div>
-              <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
+        <?php endforeach ?>
 
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.php"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
-            <div
-              class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
-            >
-              <img class="w-100" src="<?= asset("images/2.webp") ?>" alt="1" />
-            </div>
-            <div class="w-100 px-8 lg:px-0 mt-8">
-              <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
-              </h3>
-              <div class="flex mt-6 items-center">
-                <img
-                  class="w-8 h-8 rounded-full"
-                  src="<?= asset("images/5.jpg") ?>"
-                  alt=""
-                />
-                <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
-                >
-              </div>
-              <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
-
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.php"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </a>
-        </div>
-
-        <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
-            <div
-              class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
-            >
-              <img class="w-100" src="<?= asset("images/1.webp") ?>" alt="1" />
-            </div>
-            <div class="w-100 px-8 lg:px-0 mt-8">
-              <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
-              </h3>
-              <div class="flex mt-6 items-center">
-                <img
-                  class="w-8 h-8 rounded-full"
-                  src="<?= asset("images/5.jpg") ?>"
-                  alt=""
-                />
-                <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
-                >
-              </div>
-              <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
-
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.php"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
-            <div
-              class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
-            >
-              <img class="w-100" src="<?= asset("images/4.webp") ?>" alt="1" />
-            </div>
-            <div class="w-100 px-8 lg:px-0 mt-8">
-              <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
-              </h3>
-              <div class="flex mt-6 items-center">
-                <img
-                  class="w-8 h-8 rounded-full"
-                  src="<?= asset("images/5.jpg") ?>"
-                  alt=""
-                />
-                <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
-                >
-              </div>
-              <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
-
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.php"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
-            <div
-              class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
-            >
-              <img class="w-100" src="<?= asset("images/6.jpg") ?>" alt="1" />
-            </div>
-            <div class="w-100 px-8 lg:px-0 mt-8">
-              <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
-              </h3>
-              <div class="flex mt-6 items-center">
-                <img
-                  class="w-8 h-8 rounded-full"
-                  src="<?= asset("images/5.jpg") ?>"
-                  alt=""
-                />
-                <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
-                >
-              </div>
-              <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
-
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.php"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
-            <div
-              class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
-            >
-              <img class="w-100" src="<?= asset("images/1.webp") ?>" alt="1" />
-            </div>
-            <div class="w-100 px-8 lg:px-0 mt-8">
-              <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
-              </h3>
-              <div class="flex mt-6 items-center">
-                <img
-                  class="w-8 h-8 rounded-full"
-                  src="<?= asset("images/5.jpg") ?>"
-                  alt=""
-                />
-                <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
-                >
-              </div>
-              <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
-
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.php"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
-            <div
-              class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
-            >
-              <img class="w-100" src="<?= asset("images/4.webp") ?>" alt="1" />
-            </div>
-            <div class="w-100 px-8 lg:px-0 mt-8">
-              <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
-              </h3>
-              <div class="flex mt-6 items-center">
-                <img
-                  class="w-8 h-8 rounded-full"
-                  src="<?= asset("images/5.jpg") ?>"
-                  alt=""
-                />
-                <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
-                >
-              </div>
-              <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
-
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.php"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </a>
-        </div>
-        <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
-            <div
-              class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
-            >
-              <img class="w-100" src="<?= asset("images/6.jpg") ?>" alt="1" />
-            </div>
-            <div class="w-100 px-8 lg:px-0 mt-8">
-              <h3 class="text-xl font-medium">
-                The AI magically removes moving objects from videos.
-              </h3>
-              <div class="flex mt-6 items-center">
-                <img
-                  class="w-8 h-8 rounded-full"
-                  src="<?= asset("images/5.jpg") ?>"
-                  alt=""
-                />
-                <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md">Carrol Atkinson</span> -
-                  July 19, 2019</span
-                >
-              </div>
-              <p class="mt-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-                sunt tempora dolor laudantium sed optio, explicabo ad deleniti
-                impedit facilis fugit recusandae! Illo, aliquid, dicta beatae
-                quia porro id est.
-
-                <a
-                  class="block mt-6 font-light text-xl text-blue-500"
-                  href="single.php"
-                  >Read More</a
-                >
-              </p>
-            </div>
-          </a>
-        </div>
       </div>
       <div class="w-100 h-px bg-gray-400 my-6 lg:my-12"></div>
       <div class="w-100 flex justify-center">
