@@ -19,4 +19,17 @@ function get_data($filename){
     return json_decode($database, true);
 }
 
+function get_post_order_by_view($posts){
+    uasort($posts,function($first,$second){
+        if($first["view"] > $second["view"]){
+            return -1;
+        }else{
+            return 1;
+        }
+    });
+
+    $posts = array_values($posts);
+    return count($posts)? $posts : null;
+}
+
 ?>

@@ -2,6 +2,8 @@
 require("./function.php");
 
 $setting = get_data("setting");
+$post = get_data("post");
+$postP = get_post_order_by_view($post);
 ?>
 
 <!DOCTYPE html>
@@ -320,62 +322,27 @@ $setting = get_data("setting");
           <h2 class="text-xl">Popular Posts</h2>
           <br />
           <hr />
-          <div
+          <?php foreach($postP as $post): ?>
+            <div
             class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
-          >
-            <img src="<?= asset("images/6.jpg") ?>" class="w-40 h-full" alt="6" />
+            >
+            <img src="<?= asset("images/" . $post["image"]) ?>" class="w-40 h-full" alt="6" />
             <span>
               <span class="text-sm lg:text-sm xl:text-lg">
-                There’s a Cool New Way for Men to Wear Socks and Sandals</span
-              >
-              <br />
-              <span class="text-2xs text-gray-400 tracking-widest text-light"
-                >JANUARY 9, 2018 AT 2:21PM
+                <?= substr($post["title"], 0, 25) . "..." ?></span
+                >
+                <br />
+                <span class="text-2xs text-gray-400 tracking-widest text-light"
+                ><?= date("Y M d", strtotime($post["date_published"])) ?>
+              </span>
+              <br>
+              <span class="-top-2 text-2xs text-gray-400 tracking-widest text-light relative"
+                ><?= $post["view"] . " view" ?>
               </span>
             </span>
           </div>
-          <div
-            class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
-          >
-            <img src="<?= asset("images/1.webp") ?>" class="w-40 h-full" alt="6" />
-            <span>
-              <span class="text-sm lg:text-sm xl:text-lg">
-                There’s a Cool New Way for Men to Wear Socks and Sandals</span
-              >
-              <br />
-              <span class="text-2xs text-gray-400 tracking-widest text-light"
-                >JANUARY 9, 2018 AT 2:21PM
-              </span>
-            </span>
-          </div>
-          <div
-            class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
-          >
-            <img src="<?= asset("images/2.webp") ?>" class="w-40 h-full" alt="6" />
-            <span>
-              <span class="text-sm lg:text-sm xl:text-lg">
-                There’s a Cool New Way for Men to Wear Socks and Sandals</span
-              >
-              <br />
-              <span class="text-2xs text-gray-400 tracking-widest text-light"
-                >JANUARY 9, 2018 AT 2:21PM
-              </span>
-            </span>
-          </div>
-          <div
-            class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
-          >
-            <img src="<?= asset("images/6.jpg") ?>" class="w-40 h-full" alt="6" />
-            <span>
-              <span class="text-sm lg:text-sm xl:text-lg">
-                There’s a Cool New Way for Men to Wear Socks and Sandals</span
-              >
-              <br />
-              <span class="text-2xs text-gray-400 tracking-widest text-light"
-                >JANUARY 9, 2018 AT 2:21PM
-              </span>
-            </span>
-          </div>
+          <?php endforeach ?>
+          
         </div>
 
         <div class="w-full flex flex-col mt-28">

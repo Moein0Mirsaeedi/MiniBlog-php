@@ -3,72 +3,80 @@
         "id": 1,
         "title": "The AI magically removes moving objects from videos.",
         "author": "Carrol Atkinson",
-        "date_published": "July 19, 2019",
+        "date_published": "2021-06-06 15:07:00",
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         "tags": ["Travel", "Food"],
+        "view": "560",
         "image": "1.webp"
     },
     {
         "id": 2,
         "title": "Lorem ipsum dolor sit amet.",
         "author": "Reza Golnari",
-        "date_published": "May 29, 2020",
+        "date_published": "2022-11-23 11:35:23",
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         "tags": ["Sport", "Fitness"],
+        "view": "1536",
         "image": "2.webp"
     },
     {
         "id": 3,
         "title": "Est galisum aliquam sit facilis voluptatem",
         "author": "Moein Mirsaeedi",
-        "date_published": "Apr 8, 2023",
+        "date_published": "2023-12-02 11:46:52",
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         "tags": ["Travel", "Survive"],
+        "view": "1123",
         "image": "3.webp"
     },
     {
         "id": 4,
         "title": "qui dolorum expedita id ipsa",
         "author": "Carrol Atkinson",
-        "date_published": "July 12, 2021",
+        "date_published": "2020-08-09 06:49:30",
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         "tags": ["Travel", "Food"],
+        "view": "1435",
         "image": "4.webp"
     },
     {
         "id": 5,
         "title": "officia quo dolore repellendus.",
         "author": "Moein Mirsaeedi",
-        "date_published": "July 12, 2021",
+        "date_published": "2022-08-23 07:26:23",
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         "tags": ["Travel", "Food"],
+        "view": "1256",
         "image": "5.jpg"
     },
     {
         "id": 6,
         "title": "Et quos laudantium nam possimus dolor non nesciunt",
         "author": "Moein Mirsaeedi",
-        "date_published": "Nov 25, 2023",
+        "date_published": "2024-02-04 23:59:45",
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         "tags": ["Travel", "Food"],
+        "view": "1950",
         "image": "6.jpg"
     },
     {
         "id": 7,
         "title": "voluptas sed dignissimos molestias.",
         "author": "Carrol Atkinson",
-        "date_published": "Feb 27, 2021",
+        "date_published": "2024-01-26 22:15:23",
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         "tags": ["Travel", "Food"],
+        "view": "2345",
         "image": "1.webp"
     },
     {
         "id": 8,
         "title": "Eos quia minus ut quia consectetur nam rerum veniam qui quia",
         "author": "Reza Golnari",
-        "date_published": "July 1, 2018",
+        "date_published": "2020-02-22 19:59:15",
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
         "tags": ["Travel", "Food"],
+        "view": "2645",
         "image": "2.webp"
     }
 ]

@@ -16,7 +16,7 @@ $posts = get_data("post");
     <link rel="stylesheet" href="<?= asset("css/style.css") ?>" />
     <link rel="stylesheet" href="<?= asset("css/home.css") ?>" />
   </head>
-  <body class="">
+  <body>
     <!-- Menu -->
     <?php require("./parts/menu.php"); ?>
 
@@ -108,7 +108,7 @@ $posts = get_data("post");
                 />
                 <span class="ml-4 font-light text-sm"
                   >By <span class="font-normal text-md"><?= $post["author"] ?></span> -
-                  <?= $post["date_published"] ?></span
+                  <?= date("Y M d", strtotime($post["date_published"])) ?></span
                 >
               </div>
               <p class="mt-6">
