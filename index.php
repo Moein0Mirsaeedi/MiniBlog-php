@@ -88,17 +88,17 @@ $posts = get_data("post");
       <h2 class="text-5xl ml-3 -mb-10">Recent</h2>
       <div class="w-100 xl:grid xl:grid-cols-3 xl:grid-rows-3 xl:gap-5">
 
-      <?php foreach($posts as $post): ?>
+      <?php foreach($posts as $post1): ?>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
           <a href="single.php">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
-              <img class="w-100" src="<?= asset("images/" . $post["image"]) ?>" alt="1" />
+              <img class="w-100" src="<?= asset("images/" . $post1["image"]) ?>" alt="1" />
             </div>
             <div class="w-100 px-8 lg:px-0 mt-8">
               <h3 class="text-xl font-medium">
-                <?= $post["title"] ?>
+                <?= $post1["title"] ?>
               </h3>
               <div class="flex mt-6 items-center">
                 <img
@@ -107,12 +107,12 @@ $posts = get_data("post");
                   alt=""
                 />
                 <span class="ml-4 font-light text-sm"
-                  >By <span class="font-normal text-md"><?= $post["author"] ?></span> -
-                  <?= date("Y M d", strtotime($post["date_published"])) ?></span
+                  >By <span class="font-normal text-md"><?= $post1["author"] ?></span> -
+                  <?= date("Y M d", strtotime($post1["date_published"])) ?></span
                 >
               </div>
               <p class="mt-6">
-              <?= substr($post["content"], 0, 250) . "..." ?>
+              <?= substr($post1["content"], 0, 250) . "..." ?>
 
                 <a
                   class="block mt-6 font-light text-xl text-blue-500"

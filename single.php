@@ -3,7 +3,7 @@ require("./function.php");
 
 $setting = get_data("setting");
 $post = get_data("post");
-$postP = get_post_order_by_view($post);
+$topPost = orderPostsByViews($post);
 ?>
 
 <!DOCTYPE html>
@@ -322,7 +322,7 @@ $postP = get_post_order_by_view($post);
           <h2 class="text-xl">Popular Posts</h2>
           <br />
           <hr />
-          <?php foreach($postP as $post): ?>
+          <?php foreach($topPost as $post): ?>
             <div
             class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
             >
