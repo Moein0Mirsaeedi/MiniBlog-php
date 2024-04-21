@@ -4,6 +4,11 @@ require("./function.php");
 $setting = get_data("setting");
 $post = get_data("post");
 $topPost = orderPostsByViews($post);
+if(!isset($_GET['post'])){
+  redirect("index.php");
+};
+
+dd($_GET);
 ?>
 
 <!DOCTYPE html>

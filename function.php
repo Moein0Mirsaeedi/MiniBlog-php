@@ -22,6 +22,11 @@ function get_data($filename){
     return json_decode($database, true);
 }
 
+function redirect($path){
+    header("location: $path");
+    exit();
+}
+
 function orderPostsByViews($posts) {
     // Sort the posts by views in descending order
     usort($posts, function($a, $b) {
