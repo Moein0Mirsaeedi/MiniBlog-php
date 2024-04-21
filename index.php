@@ -3,6 +3,7 @@ require("./function.php");
 
 $setting = get_data("setting");
 $posts = get_data("post");
+$lastPost = orderPostByDate($posts);
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +89,7 @@ $posts = get_data("post");
       <h2 class="text-5xl ml-3 -mb-10">Recent</h2>
       <div class="w-100 xl:grid xl:grid-cols-3 xl:grid-rows-3 xl:gap-5">
 
-      <?php foreach($posts as $post1): ?>
+      <?php foreach($lastPost as $post1): ?>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
           <a href="single.php">
             <div
