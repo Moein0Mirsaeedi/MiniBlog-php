@@ -1,13 +1,17 @@
 <?php 
 require("./function.php");
 
+$id = $_GET['post'];
 $setting = get_data("setting");
 $post = get_data("post");
 $topPost = orderPostsByViews($post);
 if(!isset($_GET['post'])){
   redirect("index.php");
 };
+$thisPost = getPostById($post, $id);
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,10 +28,10 @@ if(!isset($_GET['post'])){
     <!-- Menu -->
     <?php require("./parts/menu.php"); ?>
 
-
+    <?php if($thisPost): ?>
     <!-- intro -->
     <div
-      class=" w-full h-screen bg-[url('<?= asset("images/1.webp") ?>')] bg-cover bg-center bg-brightness relative"
+      class=" w-full h-screen bg-[url('<?= asset("images/") . $thisPost['image'] ?>')] bg-cover bg-center bg-brightness relative"
     >
       <div
         class="container mx-auto h-full flex justify-center items-center flex-col relative z-10"
@@ -35,13 +39,12 @@ if(!isset($_GET['post'])){
         <h1
           class="text-center text-white text-4xl md:text-7xl lg:text-8xl lg:px-40"
         >
-          The AI magically removes moving objects from videos.
+          <?= $thisPost['title'] ?>
         </h1>
         <div class="flex mt-6 items-center">
           <img class="w-8 h-8 rounded-full" src="<?= asset("images/5.jpg") ?>" alt="" />
           <span class="ml-4 font-light text-white text-sm"
-            >By <span class="font-normal text-md">Carrol Atkinson</span> - July
-            19, 2019</span
+            >By <span class="font-normal text-md"><?= $thisPost['author'] ?></span> - <?= $thisPost['date_published'] ?></span
           >
         </div>
       </div>
@@ -51,39 +54,8 @@ if(!isset($_GET['post'])){
     <div class="container mx-auto flex flex-col justify-center gap-5 p-4 lg:flex-row">
       <section class="w-full lg:w-3/6 px-4 pt-8">
         <p class="text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          eaque cupiditate optio animi expedita sed voluptatum cumque ducimus
-          officiis placeat accusantium adipisci laborum ex qui officia facilis
-          at nulla, unde ipsa distinctio voluptas exercitationem a blanditiis
-          incidunt. Quia quo expedita blanditiis incidunt labore, praesentium
-          sapiente sequi rem repudiandae ipsam sunt eum, eius consequatur
-          perspiciatis animi sint temporibus repellat laborum. <br /><br />
-          Rem accusamus eos laudantium hic ex vero commodi velit, non blanditiis
-          voluptate nisi in perferendis, nam sed. Magnam at obcaecati excepturi,
-          distinctio fugiat laboriosam veniam quo totam saepe repellat similique
-          ullam accusantium est ratione harum exercitationem quis maiores, a
-          perspiciatis ea nam consectetur voluptatem ad? Ab sequi quod nesciunt
-          veritatis dolorum repellat ipsum. <br /><br />
-          Vero amet cumque odit possimus excepturi velit quam perferendis
-          corporis eius itaque quasi, molestiae delectus! Exercitationem
-          doloremque, sed necessitatibus ad quae sint:
-          <br /><br />
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-          eaque cupiditate optio animi expedita sed voluptatum cumque ducimus
-          officiis placeat accusantium adipisci laborum ex qui officia facilis
-          at nulla, unde ipsa distinctio voluptas exercitationem a blanditiis
-          incidunt. Quia quo expedita blanditiis incidunt labore, praesentium
-          sapiente sequi rem repudiandae ipsam sunt eum, eius consequatur
-          perspiciatis animi sint temporibus repellat laborum. <br /><br />
-          Rem accusamus eos laudantium hic ex vero commodi velit, non blanditiis
-          voluptate nisi in perferendis, nam sed. Magnam at obcaecati excepturi,
-          distinctio fugiat laboriosam veniam quo totam saepe repellat similique
-          ullam accusantium est ratione harum exercitationem quis maiores, a
-          perspiciatis ea nam consectetur voluptatem ad? Ab sequi quod nesciunt
-          veritatis dolorum repellat ipsum. <br /><br />
-          Vero amet cumque odit possimus excepturi velit quam perferendis
-          corporis eius itaque quasi, molestiae delectus! Exercitationem
-          doloremque, sed necessitatibus ad quae sint:
+          <?= $thisPost['content'] ?>
+          <br />
           <br />
 
           <img src="<?= asset("images/1.webp") ?>" class="w-full rounded-md" alt="" />
@@ -91,32 +63,6 @@ if(!isset($_GET['post'])){
           <img src="<?= asset("images/2.webp") ?>" class="w-full rounded-md" alt="" />
           <br />
           <img src="<?= asset("images/3.webp") ?>" class="w-full rounded-md" alt="" />
-
-          <br />
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero nulla
-          corporis inventore similique consectetur consequatur ad quis officiis
-          soluta ut ea dolore nisi mollitia minus dolor, eius in labore expedita
-          natus officia iusto possimus id! Voluptas at itaque aperiam quibusdam,
-          natus architecto voluptate quisquam. Incidunt repellendus voluptas
-          vero numquam ullam corrupti cum, eius fugiat blanditiis reprehenderit
-          repellat temporibus ex obcaecati, quae qui! Totam, eius. <br /><br />
-          Quod accusamus ab veritatis repellendus blanditiis id, excepturi
-          aliquam ullam, iste illum rem ad nemo quam quidem! Numquam quisquam,
-          beatae dolore laborum a molestias dolor quaerat sit iste laudantium
-          voluptates? Soluta quaerat vero dignissimos possimus accusantium odio
-          architecto nostrum aspernatur dicta non reiciendis rerum sint, quae
-          dolore, odit, quia fugiat corrupti? Consequuntur ipsa incidunt
-          laboriosam. <br /><br />
-          Voluptates, cum quasi eaque, aut ex beatae eveniet doloremque itaque,
-          natus cumque et? Eum dolore eos sapiente saepe voluptates laudantium
-          expedita, vel similique corrupti quia soluta dolor voluptate alias
-          doloremque consectetur recusandae a, ipsa, hic autem. Suscipit ullam
-          aperiam est numquam error, doloribus nobis a quaerat dicta asperiores
-          vel quo necessitatibus, tempora velit magnam blanditiis iste magni
-          assumenda reprehenderit minima. Ipsa dignissimos recusandae velit
-          provident, quidem vel. Facilis rem dolor in culpa commodi.
-          <br /><br />
-          Ducimus perferendis ab ratione non repudiandae molestiae magni!
         </p>
         <div class="w-full mt-24">
           <h2 class="text-3xl">5 Comments</h2>
@@ -308,7 +254,7 @@ if(!isset($_GET['post'])){
             class="rounded-full w-40 h-40"
             alt=""
           />
-          <h2 class="text-3xl mt-5">Craig David</h2>
+          <h2 class="text-3xl mt-5"><?= $thisPost['author'] ?></h2>
           <p class="text-center text-gray-500 mt-5">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Exercitationem facilis sunt repellendus excepturi beatae porro
@@ -393,21 +339,18 @@ if(!isset($_GET['post'])){
           <br />
           <hr />
           <div class="flex flex-wrap gap-1 h-20">
-            <span class="bg-gray-100 py-1 px-2">Sport</span>
-            <span class="bg-gray-100 py-1 px-2">Travel</span>
-            <span class="bg-gray-100 py-1 px-2">Business</span>
-            <span class="bg-gray-100 py-1 px-2">Lifestyle</span>
-            <span class="bg-gray-100 py-1 px-2">Cookies</span>
-            <span class="bg-gray-100 py-1 px-2">Programming</span>
-            <span class="bg-gray-100 py-1 px-2">Blog</span>
-            <span class="bg-gray-100 py-1 px-2">Advertise</span>
-            <span class="bg-gray-100 py-1 px-2">Freelancing</span>
-            <span class="bg-gray-100 py-1 px-2">Food</span>
+            <?php foreach($thisPost['tags'] as $postTags): ?>
+            <span class="bg-gray-100 py-1 px-2"><?= $postTags ?></span>
+            <?php endforeach; ?>
           </div>
         </div>
       </section>
     </div>
-
+    <?php else: ?>
+      <br><br><br><br><br>
+      <h1 style="font-size:30px; text-align:center; color:red">404: Does not exists any data</h1>
+      <br><br><br><br><br><br><br><br>
+    <?php endif ?>
     <!-- Favorite -->
     <div class="container py-6 bg-gray-50 mx-auto xl:h-screen xl:px-28">
       <h2 class="text-5xl ml-3 mb-6">More Related Posts</h2>

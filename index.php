@@ -91,7 +91,7 @@ $lastPost = orderPostByDate($posts);
 
       <?php foreach($lastPost as $post1): ?>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php?post= <?= $post1['id'] ?>">
+          <a href="single.php?post=<?= $post1['id'] ?>">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >

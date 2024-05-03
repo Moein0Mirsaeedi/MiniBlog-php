@@ -48,4 +48,17 @@ function orderPostByDate($posts){
     return count($posts)? $posts : null;
 }
 
+function getPostById($posts, $id){
+    $post = array_filter($posts, function($post) use($id){
+        if($post['id'] == $id){
+            return true;
+        }else{
+            return false;
+        };
+    });
+
+    $post = array_values($post);
+    return (count($post)) ? $post[0] : null;
+}
+
 ?>
