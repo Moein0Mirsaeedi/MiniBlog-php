@@ -302,36 +302,30 @@ $thisPost = getPostById($post, $id);
           <br />
           <hr />
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
-            <span><a href="category.php" class="text-blue-500">Food</a></span>
+            <span><a href="<?= BASE_URL ?>category.php?category=Politics" class="text-blue-500">Politics</a></span>
             <span>(12)</span>
           </div>
           <hr />
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
-            <span
-              ><a href="category.php" class="text-blue-500">Travel</a></span
-            >
+            <span><a href="<?= BASE_URL ?>category.php?category=tech" class="text-blue-500">tech</a></span>
             <span>(22)</span>
           </div>
           <hr />
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
-            <span><a href="category.php" class="text-blue-500">Sport</a></span>
+            <span><a href="<?= BASE_URL ?>category.php?category=Entertainment" class="text-blue-500">Entertainment</a></span>
             <span>(49)</span>
           </div>
           <hr />
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
-            <span
-              ><a href="category.php" class="text-blue-500">Lifestyle</a></span
-            >
+            <span><a href="<?= BASE_URL ?>category.php?category=Travel" class="text-blue-500">Travel</a></span>
             <span>(36)</span>
           </div>
           <hr />
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
-            <span
-              ><a href="category.php" class="text-blue-500">Business</a></span
-            >
+            <span><a href="<?= BASE_URL ?>category.php?category=Sport" class="text-blue-500">Sport</a></span>
             <span>(89)</span>
           </div>
           <hr />

@@ -27,7 +27,7 @@ $searchPosts = getPostByWord($posts, $search);
     <!-- Menu -->
     <?php require("./parts/menu.php"); ?>
 
-    <!-- Categoty title -->
+    <!-- search title -->
     <div class="bg-gray-100 py-20 px-6 sm:px-20 lg:px-32">
       <p class="text-md text-gray-500">Search</p>
       <h2 class="text-4xl mt-2">
@@ -49,13 +49,13 @@ $searchPosts = getPostByWord($posts, $search);
       </p>
     </div>
 
-    <!-- Category posts -->
+    <!-- search posts -->
     <div class="container lg:px-28 mx-auto pb-20">
       <?php if($searchPosts): ?>
       <div class="w-100 xl:grid xl:grid-cols-3 xl:grid-rows-3 xl:gap-5">
       <?php foreach($searchPosts as $post1): ?>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
+          <a href="single.php?post=<?= $post1['id'] ?>">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >
