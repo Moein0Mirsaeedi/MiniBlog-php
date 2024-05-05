@@ -62,18 +62,23 @@ function getPostById($posts, $id){
 }
 
 function getPostByWord($posts, $search){
-    $posts = array_filter($posts, function($post) use($search){
-        if(strpos($post['title'],$search) !== false
-        or strpos($post['content'],$search) !== false
-        or strpos($post['author'],$search) !== false){
-            return true;
-        }else{
-            return false;
-        }
-    });
+    $search = trim($search);
+    if($search != ""){
+        $posts = array_filter($posts, function($post) use($search){
+            if(strpos($post['title'],$search) !== false
+            or strpos($post['content'],$search) !== false
+            or strpos($post['author'],$search) !== false){
+                return true;
+            }else{
+                return false;
+            }
+        });
+        $posts = array_values($posts);
+        return count($posts)? $posts : null;
+    }else{
+        return null;
+    }
 
-    $posts = array_values($posts);
-    return count($posts)? $posts : null;
 }
 
 ?>

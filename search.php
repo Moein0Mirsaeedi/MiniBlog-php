@@ -8,6 +8,7 @@ if(!isset($_GET['search'])){
 $search = $_GET['search'];
 $setting = get_data("setting");
 $posts = get_data("post");
+
 $searchPosts = getPostByWord($posts, $search);
 
 ?>
