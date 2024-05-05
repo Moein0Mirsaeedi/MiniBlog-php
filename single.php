@@ -64,6 +64,9 @@ $thisPost = getPostById($post, $id);
           <br />
           <img src="<?= asset("images/3.webp") ?>" class="w-full rounded-md" alt="" />
         </p>
+      <br><br>
+        <span style="font-size:18px"><?= $thisPost['view'] ?> Views</span>
+        <br>
         <div class="w-full mt-24">
           <h2 class="text-3xl">5 Comments</h2>
           <ul class="w-100 mt-10">
@@ -272,24 +275,24 @@ $thisPost = getPostById($post, $id);
           <br />
           <hr />
           <?php foreach($topPost as $post): ?>
-            <div
-            class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12"
-            >
-            <img src="<?= asset("images/" . $post["image"]) ?>" class="w-40 h-full" alt="6" />
-            <span>
-              <span class="text-sm lg:text-sm xl:text-lg">
-                <?= substr($post["title"], 0, 25) . "..." ?></span
-                >
-                <br />
-                <span class="text-2xs text-gray-400 tracking-widest text-light"
-                ><?= date("Y M d", strtotime($post["date_published"])) ?>
-              </span>
-              <br>
-              <span class="-top-2 text-2xs text-gray-400 tracking-widest text-light relative"
-                ><?= $post["view"] . " view" ?>
-              </span>
-            </span>
-          </div>
+            <a href="single.php?post=<?= $post['id'] ?>">
+              <div class="flex justify-center items-center gap-5 h-20 mt-12 lg:mt-20 xl:mt-12">
+                <img src="<?= asset("images/" . $post["image"]) ?>" class="w-40 h-full" alt="6" />
+                <span>
+                  <span class="text-sm lg:text-sm xl:text-lg">
+                    <?= substr($post["title"], 0, 25) . "..." ?></span
+                    >
+                    <br />
+                    <span class="text-2xs text-gray-400 tracking-widest text-light"
+                    ><?= date("Y M d", strtotime($post["date_published"])) ?>
+                  </span>
+                  <br>
+                  <span class="-top-2 text-2xs text-gray-400 tracking-widest text-light relative"
+                    ><?= $post["view"] . " view" ?>
+                  </span>
+                </span>
+              </div>
+            </a>
           <?php endforeach ?>
           
         </div>
