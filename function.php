@@ -92,4 +92,15 @@ function getPostByCategory($posts, $category) {
     return count($posts)? $posts : null;
 }
 
+function getCountCategory($posts, $category){
+    $i = 0;
+    foreach($posts as $post){
+        foreach($post['tags'] as $tag){
+            if($tag == $category)
+                $i++;
+        };
+    }
+    return $i;
+}
+
 ?>

@@ -9,6 +9,14 @@ if(!isset($_GET['post'])){
   redirect("index.php");
 };
 $thisPost = getPostById($post, $id);
+
+$politicsCount = getCountCategory($post, "Politics");
+$techCount = getCountCategory($post, "Tech");
+$entertainmentCount = getCountCategory($post, "Entertainment");
+$travelCount = getCountCategory($post, "Travel");
+$sportCount = getCountCategory($post, "Sport");
+
+
 ?>
 
 
@@ -293,7 +301,7 @@ $thisPost = getPostById($post, $id);
                 </span>
               </div>
             </a>
-          <?php endforeach ?>
+          <?php endforeach; ?>
           
         </div>
 
@@ -303,30 +311,30 @@ $thisPost = getPostById($post, $id);
           <hr />
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
             <span><a href="<?= BASE_URL ?>category.php?category=Politics" class="text-blue-500">Politics</a></span>
-            <span>(12)</span>
+            <span>(<?= $politicsCount ?>)</span>
           </div>
           <hr />
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
             <span><a href="<?= BASE_URL ?>category.php?category=tech" class="text-blue-500">tech</a></span>
-            <span>(22)</span>
+            <span>(<?= $techCount ?>)</span>
           </div>
           <hr />
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
             <span><a href="<?= BASE_URL ?>category.php?category=Entertainment" class="text-blue-500">Entertainment</a></span>
-            <span>(49)</span>
+            <span>(<?= $entertainmentCount ?>)</span>
           </div>
           <hr />
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
             <span><a href="<?= BASE_URL ?>category.php?category=Travel" class="text-blue-500">Travel</a></span>
-            <span>(36)</span>
+            <span>(<?= $travelCount ?>)</span>
           </div>
           <hr />
 
           <div class="flex justify-between items-center gap-5 h-20 -my-4">
             <span><a href="<?= BASE_URL ?>category.php?category=Sport" class="text-blue-500">Sport</a></span>
-            <span>(89)</span>
+            <span>(<?= $sportCount ?>)</span>
           </div>
           <hr />
         </div>
