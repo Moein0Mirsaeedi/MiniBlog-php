@@ -1,9 +1,15 @@
 <?php 
 require("./function.php");
 
+if(!isset($_GET['search'])){
+  redirect('index.php');
+}
+
+$search = $_GET['search'];
 $setting = get_data("setting");
 $posts = get_data("post");
-$lastPost = orderPostByDate($posts);
+$searchPosts = getPostByWord($posts, $search);
+
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +18,7 @@ $lastPost = orderPostByDate($posts);
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini blog - Category</title>
+    <title>Mini blog - Search</title>
     <script src="<?= asset("js/cdn.tailwindcss.com_3.3.2") ?>"></script>
     <link rel="stylesheet" href="<?= asset("css/style.css") ?>" />
   </head>
@@ -33,16 +39,20 @@ $lastPost = orderPostByDate($posts);
     
       </h2>
       <p class="text-gray-500 mt-4 sm:w-1/2">
-        Category description here.. Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Aliquam error eius quo, officiis non maxime quos
-        reiciendis perferendis doloremque maiores!
+        <?php 
+        if($searchPosts and $_GET['search'] !== "")
+          echo("<b>" . count($searchPosts) . "</b> posts were found with the word <b>'" . $_GET['search'] . "'</b>") ;
+        else
+          echo('No post was found according to your search');
+        ?>
       </p>
     </div>
 
     <!-- Category posts -->
     <div class="container lg:px-28 mx-auto pb-20">
+      <?php if($searchPosts): ?>
       <div class="w-100 xl:grid xl:grid-cols-3 xl:grid-rows-3 xl:gap-5">
-      <?php foreach($lastPost as $post1): ?>
+      <?php foreach($searchPosts as $post1): ?>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
           <a href="single.php">
             <div
@@ -79,6 +89,10 @@ $lastPost = orderPostByDate($posts);
         </div>
         <?php endforeach ?>
       </div>
+      <?php else: ?>
+        <br><br><br><br><br><br><br><br><br><br>
+      <?php endif ?>
+
       <div class="w-100 h-px bg-gray-400 my-6 lg:my-12"></div>
       <div class="w-100 flex justify-center">
         <a

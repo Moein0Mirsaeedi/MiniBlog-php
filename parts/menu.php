@@ -2,7 +2,7 @@
     <nav class="w-full fixed z-30 bg-white mx-auto shadow-md w-full flex justify-between items-center px-4 py-1.5 lg:py-3 z-10">
       <h2 class="text-2xl"><?= $setting["title"] ?></h2>
       <form action="search.php" method="GET">
-        <input type="text" name="search" placeholder="search your word" style="border: gray 2px solid; border-radius:20px; padding: 2px 7px">
+        <input type="text" name="search" placeholder="search your word" value="<?= isset($_GET['search'])? $_GET['search'] : null ?>" style="border: gray 2px solid; border-radius:20px; padding: 2px 7px">
         <input type="submit" value="search" style="border: 2px solid black; border-radius: 20px; padding: 2px 7px; cursor:pointer">
       </form>
       <div

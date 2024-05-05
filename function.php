@@ -61,4 +61,19 @@ function getPostById($posts, $id){
     return (count($post)) ? $post[0] : null;
 }
 
+function getPostByWord($posts, $search){
+    $posts = array_filter($posts, function($post) use($search){
+        if(strpos($post['title'],$search) !== false
+        or strpos($post['content'],$search) !== false
+        or strpos($post['author'],$search) !== false){
+            return true;
+        }else{
+            return false;
+        }
+    });
+
+    $posts = array_values($posts);
+    return count($posts)? $posts : null;
+}
+
 ?>
