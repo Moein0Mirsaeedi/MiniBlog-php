@@ -16,30 +16,22 @@
 
       <ul class="hidden lg:inline-flex">
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="index.php">Home</a>
+          <a class="hover:text-sky-400 transition" href="<?= BASE_URL ?>">Home</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.php"
-            >Politics</a
-          >
+          <a class="hover:text-sky-400 transition" href="<?= BASE_URL ?>category.php?category=Politics">Politics</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.php">Tech</a>
+          <a class="hover:text-sky-400 transition" href="<?= BASE_URL ?>category.php?category=Tech">Tech</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.php"
-            >Entertainment</a
-          >
+          <a class="hover:text-sky-400 transition" href="<?= BASE_URL ?>category.php?category=Entertainment">Entertainment</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.php"
-            >Travel</a
-          >
+          <a class="hover:text-sky-400 transition" href="<?= BASE_URL ?>category.php?category=Travel">Travel</a>
         </li>
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="category.php"
-            >Sports</a
-          >
+          <a class="hover:text-sky-400 transition" href="<?= BASE_URL ?>category.php?category=Sport">Sport</a>
         </li>
 
         <li class="text-lg mr-6">

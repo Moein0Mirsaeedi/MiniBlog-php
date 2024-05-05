@@ -1,9 +1,15 @@
 <?php 
 require("./function.php");
 
+if(!isset($_GET['category'])){
+  redirect("index.php");
+};
+
+$category = $_GET['category'];
 $setting = get_data("setting");
 $posts = get_data("post");
-$lastPost = orderPostByDate($posts);
+$categoryPosts = getPostByCategory($posts, $category);
+
 ?>
 
 <!DOCTYPE html>
@@ -23,20 +29,30 @@ $lastPost = orderPostByDate($posts);
     <!-- Categoty title -->
     <div class="bg-gray-100 py-20 px-6 sm:px-20 lg:px-32">
       <p class="text-md text-gray-500">Category</p>
-      <h2 class="text-4xl mt-2">Sports</h2>
+      <h2 class="text-4xl mt-2">
+      <?php
+        if(isset($_GET['category']))
+          echo($_GET['category']) ;
+        else
+          echo('No value in category');
+        ?>
+      </h2>
       <p class="text-gray-500 mt-4 sm:w-1/2">
-        Category description here.. Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Aliquam error eius quo, officiis non maxime quos
-        reiciendis perferendis doloremque maiores!
+      <?php 
+        if($categoryPosts and $_GET['category'] !== "")
+          echo("<b>" . count($categoryPosts) . "</b> posts were found with the category <b>'" . $_GET['category'] . "'</b>") ;
+        else
+          echo('No post was found according to your category');
+        ?>
       </p>
     </div>
 
     <!-- Category posts -->
     <div class="container lg:px-28 mx-auto pb-20">
       <div class="w-100 xl:grid xl:grid-cols-3 xl:grid-rows-3 xl:gap-5">
-      <?php foreach($lastPost as $post1): ?>
+      <?php foreach($categoryPosts as $post1): ?>
         <div class="w-100 mt-16 lg:shadow-xl lg:p-3 rounded-md">
-          <a href="single.php">
+          <a href="single.php?post=<?= $post1['id'] ?>">
             <div
               class="w-100 h-60 flex items-center overflow-hidden rounded-md shadow-lg lg:shadow-none"
             >

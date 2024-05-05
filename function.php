@@ -81,4 +81,15 @@ function getPostByWord($posts, $search){
 
 }
 
+function getPostByCategory($posts, $category) {
+    $posts = array_filter($posts, function($post) use($category){
+        foreach($post['tags'] as $tag){
+            if($tag == $category)
+                return true;
+        };
+    });
+    $posts = array_values($posts);
+    return count($posts)? $posts : null;
+}
+
 ?>
