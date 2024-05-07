@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "username": "rezaG",
+    "email": "reza.golnari@example.com",
+    "password": "rezagolnari1234",
+    "created_at": "2022-01-01 12:00:00",
+    "updated_at": "2022-01-01 12:00:00"
+  },
+  {
+    "id": 2,
+    "username": "jane_doe",
+    "email": "jane.doe@example.com",
+    "password": "jane3m",
+    "created_at": "2022-01-01 12:00:00",
+    "updated_at": "2022-01-01 12:00:00"
+  },
+  {
+    "id": 3,
+    "username": "bob_smith",
+    "email": "bob.smith@example.com",
+    "password": "123456789",
+    "created_at": "2022-01-01 12:00:00",
+    "updated_at": "2022-01-01 12:00:00"
+  }
+]
