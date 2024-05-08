@@ -103,4 +103,17 @@ function getCountCategory($posts, $category){
     return $i;
 }
 
+function login($users, $email, $password){
+    $user = array_filter($users, function($user) use($email, $password){
+        if($user['email'] == $email && $user['password'] == $password){
+            return true;
+        }else{
+            return false;
+        }
+    });
+
+    $user = array_values($user);
+    return count($user)? $user[0] : null;
+}
+
 ?>

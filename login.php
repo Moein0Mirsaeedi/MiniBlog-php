@@ -1,3 +1,20 @@
+<?php
+
+require("./function.php");
+
+if($_SERVER["REQUEST_METHOD"] == 'POST'){
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    
+    $email = strtolower($email);
+
+    $users = get_data('users');
+    $user = login($users, $email, $password);
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +97,7 @@
         <div class="login-form">
             <h2>Login</h2>
             <form action="login.php" method="post">
-                <input type="text" name="username" placeholder="Username">
+                <input type="email" name="email" placeholder="email">
                 <input type="password" name="password" placeholder="Password">
                 <button type="submit">Login</button>
                 <p>Don't have an account? <a href="register.php">Register</a></p>
