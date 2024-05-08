@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 const BASE_URL = "http://localhost:8000/";
 
 function asset($file){

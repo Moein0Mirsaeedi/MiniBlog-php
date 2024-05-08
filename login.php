@@ -10,7 +10,12 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
 
     $users = get_data('users');
     $user = login($users, $email, $password);
-
+    if($user){
+        $_SESSION['user'] = $user;
+        header("Location: ./index.php");
+    }else{
+        $error = "Email or password is incorrect";
+    }
 }
 
 ?>
@@ -103,6 +108,9 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
                 <p>Don't have an account? <a href="register.php">Register</a></p>
             </form>
         </div>
+        <span style="color: darkred;">
+            error
+        </span>
     </div>
 </body>
 </html>
