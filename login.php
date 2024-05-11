@@ -108,9 +108,11 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
                 <p>Don't have an account? <a href="register.php">Register</a></p>
             </form>
         </div>
+        <?php if(isset($error) && count($error)): ?>
         <span style="color: darkred;">
-            error
+            <?= $error ?>
         </span>
+        <?php endif; ?>
     </div>
 </body>
 </html>
