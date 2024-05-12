@@ -118,4 +118,21 @@ function login($users, $email, $password){
     return count($user)? $user[0] : null;
 }
 
+function validateLogin($email, $password){
+    $errors = [];
+
+    if(empty($email)){
+        $errors[] = 'Email is required';
+    }else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $errors[] = 'Email is invalid';
+    }
+
+    if(empty($password)){
+        $errors[] = 'Password is required';
+    }
+
+    return $errors;
+}
+
+
 ?>

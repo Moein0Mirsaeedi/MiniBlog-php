@@ -3,18 +3,23 @@
 require("./function.php");
 
 if($_SERVER["REQUEST_METHOD"] == 'POST'){
+    $errors = [];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    
+
     $email = strtolower($email);
 
-    $users = get_data('users');
-    $user = login($users, $email, $password);
-    if($user){
-        $_SESSION['user'] = $user;
-        header("Location: ./index.php");
-    }else{
-        $error = "Email or password is incorrect";
+    $errors = validateLogin($email, $password);
+
+    if(!count($errors)){
+        $users = get_data('users');
+        $user = login($users, $email, $password);
+        if($user){
+            $_SESSION['user'] = $user;
+            header("Location: ./index.php");
+        }else{
+            $errors[] = "Email or password is incorrect";
+        }
     }
 }
 
@@ -102,16 +107,18 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         <div class="login-form">
             <h2>Login</h2>
             <form action="login.php" method="post">
-                <input type="email" name="email" placeholder="email">
-                <input type="password" name="password" placeholder="Password">
+                <input type="email" name="email" placeholder="email" value="<?= isset($email)? $email : '' ?>">
+                <input type="password" name="password" placeholder="Password" value="<?= isset($password)? $password : '' ?>">
                 <button type="submit">Login</button>
                 <p>Don't have an account? <a href="register.php">Register</a></p>
             </form>
         </div>
-        <?php if(isset($error) && count($error)): ?>
-        <span style="color: darkred;">
-            <?= $error ?>
-        </span>
+        <?php if(isset($errors) && count($errors)): ?>
+            <div class="alert alert-danger" role="alert">
+                <?php foreach($errors as $error): ?>
+                    <span style="color: red;"><?= $error ?></span><br>
+                <?php endforeach; ?>
+            </div>
         <?php endif; ?>
     </div>
 </body>
