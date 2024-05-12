@@ -118,6 +118,11 @@ function login($users, $email, $password){
     return count($user)? $user[0] : null;
 }
 
+function logout(){
+    unset($_SESSION['user']);
+    redirect('login.php');
+}
+
 function validateLogin($email, $password){
     $errors = [];
 

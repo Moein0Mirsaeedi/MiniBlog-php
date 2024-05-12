@@ -6,7 +6,7 @@ if(authenticated()){
     redirect('panel.php');
 }
 
-if($_SERVER["REQUEST_METHOD"] == 'POST'){
+if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['email']) && isset($_POST['password'])){
     $errors = [];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST'){
         $user = login($users, $email, $password);
         if($user){
             $_SESSION['user'] = $user;
-            header("Location: ./index.php");
+            header("Location: ./panel.php");
         }else{
             $errors[] = "Email or password is incorrect";
         }
