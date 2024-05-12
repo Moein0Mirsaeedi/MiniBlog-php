@@ -134,5 +134,12 @@ function validateLogin($email, $password){
     return $errors;
 }
 
+function authenticated(){
+    if(isset($_SESSION['user'])){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 ?>

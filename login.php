@@ -2,6 +2,10 @@
 
 require("./function.php");
 
+if(authenticated()){
+    redirect('panel.php');
+}
+
 if($_SERVER["REQUEST_METHOD"] == 'POST'){
     $errors = [];
     $email = $_POST['email'];
