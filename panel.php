@@ -6,7 +6,8 @@ if(!authenticated()){
     redirect('login.php');
 }
 
-$posts = get_data('post')
+$posts = get_data('post');
+$user = getUserData();
 
 ?>
 
@@ -27,6 +28,9 @@ $posts = get_data('post')
                     <li><a href="<?= BASE_URL ?>panel.php">Panel</a></li>
                     <li><a href="<?= BASE_URL ?>create.php">Create post</a></li>
                     <li><a href="<?= BASE_URL ?>logout.php">Logout</a></li>
+                </ul>
+                <ul>
+                    <li><?= $user['username'] ?></li>
                 </ul>
             </nav>
             <section class="content">
