@@ -115,6 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == 'POST' && isset($_POST['email']) && isset($_POS
                 <input type="password" name="password" placeholder="Password" value="<?= isset($password)? $password : '' ?>">
                 <button type="submit">Login</button>
                 <p>Don't have an account? <a href="register.php">Register</a></p>
+                <p>You don't need to login?<a href="index.php">Home page</a></p>
             </form>
         </div>
         <?php if(isset($errors) && count($errors)): ?>

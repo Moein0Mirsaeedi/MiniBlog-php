@@ -34,11 +34,19 @@
           <a class="hover:text-sky-400 transition" href="<?= BASE_URL ?>category.php?category=Sport">Sport</a>
         </li>
 
+        <?php if(authenticated()): ?>
+
         <li class="text-lg mr-6">
-          <a class="hover:text-sky-400 transition" href="dashboard.html"
-            >Dashboard</a
-          >
+          <a class="hover:text-sky-400 hover:bg-white hover:border-sky-400 bg-sky-400 border-2 border-white transition text-white	rounded-lg p-3 py-1" href="<?= BASE_URL ?>login.php">Panel</a>
         </li>
+
+        <?php else: ?>
+
+        <li class="text-lg mr-6">
+          <a class="hover:text-sky-400 hover:bg-white hover:border-sky-400 bg-sky-400 border-2 border-white transition text-white	rounded-md p-3 py-1" href="<?= BASE_URL ?>panel.php">Login</a>
+        </li>
+
+        <?php endif ?>
       </ul>
     </nav>
 

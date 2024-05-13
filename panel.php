@@ -23,6 +23,7 @@ $posts = get_data('post')
     <main>
             <nav>
                 <ul>
+                    <li><a href="<?= BASE_URL ?>index.php">Home</a></li>
                     <li><a href="<?= BASE_URL ?>panel.php">Panel</a></li>
                     <li><a href="<?= BASE_URL ?>create.php">Create post</a></li>
                     <li><a href="<?= BASE_URL ?>logout.php">Logout</a></li>
