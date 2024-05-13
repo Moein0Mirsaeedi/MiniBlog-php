@@ -6,6 +6,8 @@ if(!authenticated()){
     redirect('login.php');
 }
 
+$posts = get_data('post')
+
 ?>
 
 <!DOCTYPE html>
@@ -21,101 +23,46 @@ if(!authenticated()){
     <main>
             <nav>
                 <ul>
-                    <li><a href="#">Panel</a></li>
-                    <li><a href="#">Create post</a></li>
+                    <li><a href="<?= BASE_URL ?>panel.php">Panel</a></li>
+                    <li><a href="<?= BASE_URL ?>create.php">Create post</a></li>
+                    <li><a href="<?= BASE_URL ?>logout.php">Logout</a></li>
                 </ul>
             </nav>
             <section class="content">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Category</th>
-                            <th>View</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>this is a post</td>
-                            <td>politiacl</td>
-                            <td>150 view</td>
-                            <td>2021 May 05</td>
-                            <td>
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>this is a post</td>
-                            <td>politiacl</td>
-                            <td>150 view</td>
-                            <td>2021 May 05</td>
-                            <td>
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>this is a post</td>
-                            <td>politiacl</td>
-                            <td>150 view</td>
-                            <td>2021 May 05</td>
-                            <td>
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>this is a post</td>
-                            <td>politiacl</td>
-                            <td>150 view</td>
-                            <td>2021 May 05</td>
-                            <td>
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>this is a post</td>
-                            <td>politiacl</td>
-                            <td>150 view</td>
-                            <td>2021 May 05</td>
-                            <td>
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>this is a post</td>
-                            <td>politiacl</td>
-                            <td>150 view</td>
-                            <td>2021 May 05</td>
-                            <td>
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>this is a post</td>
-                            <td>politiacl</td>
-                            <td>150 view</td>
-                            <td>2021 May 05</td>
-                            <td>
-                                <a href="#">Edit</a>
-                                <a href="#">Delete</a>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <?php if($posts): ?>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>View</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <?php  foreach($posts as $post): ?>
+                            <tbody>
+                                <tr>
+                                    <td><?= $post['id'] ?></td>
+                                    <td><?= $post['title'] ?></td>
+                                    <td><?php
+                                        foreach($post['tags'] as $tag){
+                                            echo $tag . ', ';
+                                        }
+                                    ?></td>
+                                    <td><?= $post['view'] ?></td>
+                                    <td><?= date('Y M d', strtotime($post['date_published'])) ?></td>
+                                    <td>
+                                        <a href="#">Edit</a>
+                                        <a href="#">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        <?php endforeach ?>
+                    <?php else: ?>
+                        <p>No posts in database</p>
+                    <?php endif ?>
                 </table>
             </section>
         </main>

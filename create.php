@@ -1,3 +1,13 @@
+<?php
+
+require("./function.php");
+
+if(!authenticated()){
+    redirect('login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +21,9 @@
     <main>
             <nav>
                 <ul>
-                    <li><a href="#">Panel</a></li>
-                    <li><a href="#">Create post</a></li>
+                    <li><a href="<?= BASE_URL ?>panel.php">Panel</a></li>
+                    <li><a href="<?= BASE_URL ?>create.php">Create post</a></li>
+                    <li><a href="<?= BASE_URL ?>logout.php">Logout</a></li>
                 </ul>
             </nav>
             <section class="content">

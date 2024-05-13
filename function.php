@@ -18,7 +18,9 @@ function get_data($filename){
     // Get data from json files
     $file_adress = "./database/" . $filename . ".json";
     $file = fopen($file_adress, "r+");
-    $database = fread($file, filesize($file_adress));
+    if(filesize($file_adress)){
+        $database = fread($file, filesize($file_adress));
+    }
     fclose($file);
 
     return json_decode($database, true);
