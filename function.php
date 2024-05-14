@@ -26,6 +26,31 @@ function get_data($filename){
     return json_decode($database, true);
 }
 
+function setData($dataFile, $newData){
+    $newData = json_encode($newData);
+    
+    $file_adress = './database/' . $dataFile . '.json';
+    $file = fopen($file_adress, "w+");
+    $database = fwrite($file, $newData);
+    fclose($file);
+
+    return true;
+}
+
+function deletePost($posts, $id){
+    $post = array_filter($posts, function($post) use($id){
+        if($post['id'] != $id){
+            return true;
+        }else{
+            return false;
+        }
+    });
+
+    $post = array_values($post);
+    setData('post', $post);
+    return true;
+}
+
 function redirect($path){
     header("location: $path");
     exit();
@@ -156,5 +181,7 @@ function getUserData(){
         return null;
     }
 }
+
+
 
 ?>

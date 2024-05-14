@@ -59,8 +59,9 @@ $user = getUserData();
                                     <td><?= $post['view'] ?></td>
                                     <td><?= date('Y M d', strtotime($post['date_published'])) ?></td>
                                     <td>
-                                        <a href="#">Edit</a>
-                                        <a href="#">Delete</a>
+                                        <a class="edit" href="#">Edit</a>
+                                        <a class="delete" href="./delete.php?id=<?= $post['id'] ?>">Delete</a>
+
                                     </td>
                                 </tr>
                             </tbody>
