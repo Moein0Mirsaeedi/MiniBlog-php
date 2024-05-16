@@ -51,6 +51,49 @@ function deletePost($posts, $id){
     return true;
 }
 
+function createPost($posts, $title, $category, $content, $author){
+    $lastPost = getLastPost($posts);
+    $id = $lastPost['id'] + 1;
+    $newPost = [
+        'id' => $id,
+        'title' => $title,
+        'author' => $author,
+        'date_published' => date('Y-m-d H:i:s'),
+        'content' => $content,
+        'tags' => $category,
+        'view' => 0,
+        'image' => "1.webp"
+    ];
+
+    $posts[] = $newPost;
+    setData('post', $posts);
+    return true;
+}
+
+function validatePost($title, $category, $content){
+    $errors = [];
+
+    if(empty($title)){
+        $errors[] = "Title is required";
+    }else if(strlen($title) < 3){
+        $errors[] = "Please enter title bigger than 3 chars.";
+    }
+
+    if(empty($category)){
+        $errors[] = "Please select one category";
+    }else if(!in_array($category, ['Politics','sport','social','Travel','Sport',])){
+        $errors[] = "Selected category is invalid";
+    }
+
+    if(empty($content)){
+        $errors[] = "content is required";
+    }else if(strlen($content) < 10){
+        $errors[] = "Please enter title content than 10 chars.";
+    }
+
+    return $errors;
+}
+
 function redirect($path){
     header("location: $path");
     exit();
@@ -65,6 +108,19 @@ function orderPostsByViews($posts) {
     // Return the sorted posts
     $posts = array_values($posts);
     return count($posts)? $posts : null;
+}
+
+function getLastPost($posts){
+    uasort($posts, function($first, $secound){
+        if($first['id'] > $secound['id']){
+            return -1;
+        }else{
+            return 1;
+        }
+    });
+
+    $posts = array_values($posts);
+    return $posts[0];
 }
 
 function orderPostByDate($posts){

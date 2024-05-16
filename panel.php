@@ -51,11 +51,7 @@ $user = getUserData();
                                 <tr>
                                     <td><?= $post['id'] ?></td>
                                     <td><?= $post['title'] ?></td>
-                                    <td><?php
-                                        foreach($post['tags'] as $tag){
-                                            echo $tag . ', ';
-                                        }
-                                    ?></td>
+                                    <td><?= $post['tags'] ?></td>
                                     <td><?= $post['view'] ?></td>
                                     <td><?= date('Y M d', strtotime($post['date_published'])) ?></td>
                                     <td>
