@@ -344,9 +344,9 @@ $sportCount = getCountCategory($post, "Sport");
           <br />
           <hr />
           <div class="flex flex-wrap gap-1 h-20">
-            <?php foreach($thisPost['tags'] as $postTags): ?>
-            <span class="bg-gray-100 py-1 px-2"><?= $postTags ?></span>
-            <?php endforeach; ?>
+           
+            <span class="bg-gray-100 py-1 px-2"><?= $thisPost['tags'] ?></span>
+            
           </div>
         </div>
       </section>

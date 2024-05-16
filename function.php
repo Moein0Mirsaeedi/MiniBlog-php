@@ -180,10 +180,8 @@ function getPostByCategory($posts, $category) {
 function getCountCategory($posts, $category){
     $i = 0;
     foreach($posts as $post){
-        foreach($post['tags'] as $tag){
-            if($tag == $category)
+            if($post['tags'] == $category)
                 $i++;
-        };
     }
     return $i;
 }
