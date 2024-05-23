@@ -13,11 +13,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $category = $_POST['category'];
     $content = $_POST['content'];
     $author = $_SESSION['user']['username'];
+    $image = $_FILES['image'];
 
-    $errors = validatePost($title, $category, $content);
+    $errors = validatePost($title, $category, $content, $image);
     if(! count($errors)){
         $posts = get_data('post');
-        createPost($posts, $title, $category, $content, $author);
+        createPost($posts, $title, $category, $content, $author, $image);
         redirect('panel.php');
     }
 }
@@ -56,7 +57,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             </ul>
                         </div>
                     <?php endif ?>
-                <form action="" method="POST">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="title">Title</label>
                         <input type="text" name="title" id="title">

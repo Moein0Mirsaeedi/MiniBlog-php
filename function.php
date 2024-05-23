@@ -51,9 +51,10 @@ function deletePost($posts, $id){
     return true;
 }
 
-function createPost($posts, $title, $category, $content, $author){
+function createPost($posts, $title, $category, $content, $author, $image){
     $lastPost = getLastPost($posts);
     $id = $lastPost['id'] + 1;
+    $image_name = uploadImage($image);
     $newPost = [
         'id' => $id,
         'title' => $title,
@@ -62,7 +63,7 @@ function createPost($posts, $title, $category, $content, $author){
         'content' => $content,
         'tags' => $category,
         'view' => 0,
-        'image' => "1.webp"
+        'image' => "$image_name"
     ];
 
     $posts[] = $newPost;
@@ -70,7 +71,7 @@ function createPost($posts, $title, $category, $content, $author){
     return true;
 }
 
-function validatePost($title, $category, $content){
+function validatePost($title, $category, $content, $image){
     $errors = [];
 
     if(empty($title)){
@@ -89,6 +90,18 @@ function validatePost($title, $category, $content){
         $errors[] = "content is required";
     }else if(strlen($content) < 10){
         $errors[] = "Please enter title content than 10 chars.";
+    }
+
+    if(!is_array($image)){
+        $errors[] = 'Selected image is invalid';
+    }else if(empty($image['name'])){
+        $errors[] = 'Please upload a picture with name';
+    }else if($image['size'] > 2000000){
+        $errors[] = 'Please upload image with smaller size (size should be smaller than 5MB)';
+    }else if(! in_array($image['type'], ['image/jpeg', 'image/png', 'image/gif'])){
+        $errors[] = 'Please upload image with images type (jpeg, png, gif or...)';
+    }else if($image['error'] == '1'){
+        $errors[] = 'Image is invalid (very big size or wrong format/type)';
     }
 
     return $errors;
@@ -236,6 +249,18 @@ function getUserData(){
     }
 }
 
+function uploadImage($file){
+    $dir = 'assets/images/';
+    $name = $file['name'];
+    $extension = pathinfo($name, PATHINFO_EXTENSION);
+    $new_name = time() . '.' . $extension;
+    $tmp = $file['tmp_name'];
 
+    if(move_uploaded_file($tmp, $dir . $new_name)){
+        return "$new_name";
+    }else{
+        return '';
+    }
+}
 
 ?>
