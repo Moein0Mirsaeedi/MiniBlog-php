@@ -42,6 +42,7 @@ function deletePost($posts, $id){
         if($post['id'] != $id){
             return true;
         }else{
+            deleteImage($post['image']);
             return false;
         }
     });
@@ -260,6 +261,15 @@ function uploadImage($file){
         return "$new_name";
     }else{
         return '';
+    }
+}
+
+function deleteImage($image){
+    if (file_exists('assets/images/' . $image)){
+        unlink('assets/images/' . $image);
+        return true;
+    }else{
+        return false;
     }
 }
 
