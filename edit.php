@@ -1,36 +1,34 @@
 <?php
 
-require("./function.php");
+require('function.php');
 
 if(!authenticated()){
     redirect('login.php');
 }
 
-$user = getUserData();
-
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $title = $_POST['title'];
-    $category = $_POST['category'];
-    $content = $_POST['content'];
-    $author = $_SESSION['user']['username'];
-    $image = $_FILES['image'];
-
-    $errors = validatePost($title, $category, $content, $image);
-    if(! count($errors)){
-        $posts = get_data('post');
-        createPost($posts, $title, $category, $content, $author, $image);
-        redirect('panel.php');
-    }
+if(! isset($_GET['id'])){
+    redirect('panel.php');
 }
 
+$id = $_GET['id'];
+$posts = get_data('post');
+$post = getPostById($posts, $id);
+
+if(is_null($post)){
+    redirect('panel.php');
+}
+
+$user = getUserData();
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Edit post</title>
     <link rel="stylesheet" href="<?= asset("css/styles.css") ?>" />
     <link rel="stylesheet" href="<?= asset("css/panel.css") ?>" />
 </head>
@@ -60,29 +58,29 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div>
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title" value="<?= isset($title)? $title : '' ?>">
+                        <input type="text" name="title" id="title" value="<?= $post['title'] ?>">
                     </div>
                     <div>
                         <label for="category">Category</label>
                         <select name="category" id="category">
                             <option value="0">Select category</option>
-                            <option value="Politics" <?= (isset($category) and $category == 'Politics')? 'selected': '' ?> >Politics</option>
-                            <option value="Tech" <?= (isset($category) and $category == 'Tech')? 'selected': '' ?> >Tech</option>
-                            <option value="Entertainment" <?= (isset($category) and $category == 'Entertainment')? 'selected': '' ?> >Entertainment</option>
-                            <option value="Travel" <?= (isset($category) and $category == 'Travel')? 'selected': '' ?> >Travel</option>
-                            <option value="Sport" <?= (isset($category) and $category == 'Sport')? 'selected': '' ?> >Sport</option>
+                            <option value="Politics" <?= ($post['tags'] == 'Politics')? 'selected': '' ?> >Politics</option>
+                            <option value="Tech" <?= ($post['tags'] == 'Tech')? 'selected': '' ?> >Tech</option>
+                            <option value="Entertainment" <?= ($post['tags'] == 'Entertainment')? 'selected': '' ?> >Entertainment</option>
+                            <option value="Travel" <?= ($post['tags'] == 'Travel')? 'selected': '' ?> >Travel</option>
+                            <option value="Sport" <?= ($post['tags'] == 'Sport')? 'selected': '' ?> >Sport</option>
                         </select>
                     </div>
                     <div>
                         <label for="content">Content</label>
                         <textarea name="content" id="content" cols="30" rows="10">
-                        <?= isset($content)? $content : '' ?>
-
+                        <?= $post['content'] ?>
                         </textarea>
                     </div>
                     <div>
                         <label for="image">Image</label>
                         <input type="file" name="image" id="image">
+                        <img src="<?= asset('images/' . $post['image']) ?>" alt="">
                     </div>
                     <div>
                         <input type="submit" value="Create">
