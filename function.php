@@ -72,6 +72,62 @@ function createPost($posts, $title, $category, $content, $author, $image){
     return true;
 }
 
+function editPost($posts, $id, $title, $content, $category, $image){
+    $posts = array_map(function($post) use($id, $title, $content, $category, $image){
+        if($post['id'] == $id){
+            $post['title'] = $title;
+            $post['content'] = $content;
+            $post['tags'] = $category;
+            
+            if(!empty($image['name'])){
+                deleteImage($post['image']);
+                $post['image'] = uploadImage($image);
+            }
+        }
+
+        return $post;
+    }, $posts);
+
+    setData('post', $posts);
+    return true;
+}
+
+function validateEditPost($title, $category, $content, $image){
+    $errors = [];
+
+    if(empty($title)){
+        $errors[] = "Title is required";
+    }else if(strlen($title) < 3){
+        $errors[] = "Please enter title bigger than 3 chars.";
+    }
+
+    if(empty($category)){
+        $errors[] = "Please select one category";
+    }else if(!in_array($category, ['Politics','Sport','Tech','Travel','Sport','Entertainment'])){
+        $errors[] = "Selected category is invalid";
+    }
+
+    if(empty($content)){
+        $errors[] = "content is required";
+    }else if(strlen($content) < 10){
+        $errors[] = "Please enter title content than 10 chars.";
+    }
+
+    if(!empty($image['name'])){
+        if(!is_array($image)){
+            $errors[] = 'Selected image is invalid';
+        }else if($image['size'] > 2000000){
+            $errors[] = 'Please upload image with smaller size (size should be smaller than 5MB)';
+        }else if(! in_array($image['type'], ['image/jpeg', 'image/png', 'image/gif'])){
+            $errors[] = 'Please upload image with images type (jpeg, png, gif or...)';
+        }else if($image['error'] == '1'){
+            $errors[] = 'Image is invalid (very big size or wrong format/type)';
+        }
+    }
+
+    return $errors;
+}
+
 function validatePost($title, $category, $content, $image){
     $errors = [];
 

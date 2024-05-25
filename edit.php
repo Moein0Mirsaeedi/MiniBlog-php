@@ -20,6 +20,19 @@ if(is_null($post)){
 
 $user = getUserData();
 
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['title']) && isset($_POST['category']) && isset($_POST['content'])){
+    $title = $_POST['title'];
+    $content = $_POST['content'];
+    $category = $_POST['category'];
+    $image = $_FILES['image'];
+    $errors = validateEditPost($title, $category, $content, $image);
+    if(count($errors) == 0){
+        $posts = get_data('post');
+        editPost($posts, $id, $title, $content, $category, $image);
+        redirect('panel.php');
+    }
+}
+
 ?>
 
 
@@ -83,10 +96,11 @@ $user = getUserData();
                         <img src="<?= asset('images/' . $post['image']) ?>" alt="">
                     </div>
                     <div>
-                        <input type="submit" value="Create">
+                        <input type="submit" value="Edit">
                     </div>
                 </form>
             </section>
         </main>
 </body>
 </html>
+

@@ -8,7 +8,7 @@ if(!authenticated()){
 
 $user = getUserData();
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['title']) && isset($_POST['category']) && isset($_POST['content']) && isset($_POST['user']) && isset($_POST['image'])){
     $title = $_POST['title'];
     $category = $_POST['category'];
     $content = $_POST['content'];
